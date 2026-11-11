@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <title>Your Giga Pet</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        This is your Giga Pet
+      </h1>
+    </header>
+
+    <main>
+      <section class="pet-image-container">
+        <img class="pet-image" src="images/pet_Cerberus.png" alt="Your pet image">
+        <div class="pet-comment">
+          <img class="speech-bubble" src="images/speech-bubble.png" alt="speech bubble">
+          <span class="pet-comment-text"></span>
+        </div>
+      </section>
+      <section class="dashboard">
+        <div>Name: <strong><span class="name"></span></strong></div>
+        <!--weight and happiness changed to rows so values can be animated on them-->
+        <div class = "weight-row">
+           Weight: <strong><span class="weight"></span> pounds</strong>
+        </div>
+        <!--Happiness divided into 2 spans so "tail wags" can be hidden later without hiding "happiness"-->
+        <div class = "happiness-row">
+           Happiness: <strong><span class="happiness"></span> <span class = "happiness-unit">tail wags (per min)</span></strong>
+        </div>
+        <div class="button-container">
+          <button class="treat-button">
+            Treat
+          </button>
+          <button class="play-button">
+            Play
+          </button>
+          <button class="exercise-button">
+            Exercise
+          </button>
+          <button class="run-button">
+            Run Away
+          </button>
+        </div>
+        <div class="run-message"></div>
+        <div class="weight-message"></div>
+        <div class="end" hidden>
+          <h1 class="end-message"></h1>
+          <button class="try-again-button" hidden>
+            Try Again
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Your web-app is https, so your scripts need to be too 
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>-->
+  </body>
+</html>

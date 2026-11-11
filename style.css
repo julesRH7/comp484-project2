@@ -1,0 +1,240 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 25px;
+    background-color: rgb(225, 217, 209);
+  }
+  
+  main {
+    display:flow-root;
+  }
+  
+  header {
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color:rgb(225, 217, 209);
+  }
+  
+  h1 {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  p {
+    max-width: 600px;
+  }
+  
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  footer {
+    padding-top: 25px;
+    border-top: 1px solid black;
+  }
+  
+  footer a {
+    float:left;
+    margin:5px;
+  }
+  
+  .pet-image {
+    height:250px;
+  }
+  
+  .dashboard div {
+    display:block;
+  }
+  
+  .pet-image-container {
+    float:left;
+    padding:10px;
+  }
+  
+  .dashboard {
+    float:left;
+    padding:20px;
+  }
+  
+  .button-container {
+    margin-top:20px;
+  }
+  
+  .button-container button {
+    width: 100px;
+      margin-right: 10px;
+      text-align: center;
+      display: inline-block;
+      /*questionable float left from starter code
+      float: left;*/
+    font-size:15px;
+    background-color: #1e2835;
+    border-color: #404853;
+    cursor:pointer;
+    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
+    color: #fafafa;
+  }
+
+  .try-again-button {
+    width: 100px;
+      margin-right: 10px;
+      text-align: center;
+      display: inline-block;
+    font-size:15px;
+    background-color: #1e2835;
+    border-color: #404853;
+    cursor:pointer;
+    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
+    color: #fafafa;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+  /*handles glow and pulsation rate of glow*/
+  .run-button.glow{
+    animation: glow 1s infinite alternate;
+  }
+  @keyframes glow {
+    from {
+        box-shadow: 0 0 5px red;
+    }
+    to {
+        box-shadow: 0 0 20px red;
+    }
+}
+  /*only to give end screens higher specificity than original dashboard class*/
+  .dashboard.end{
+    display:flex;
+  }
+  .end{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition: opacity 1s ease;
+  }
+
+  .end.visible{
+    opacity:1;
+  }
+
+  .end.bad{
+    background-color:black;
+    color:white;
+  }
+  /*prevents black on black*/
+  .end.bad .end-message{
+    color:white;
+  }
+
+  .end.good{
+    background-color:#f6d18c;
+    color:black;
+  }
+
+  .end.weird{
+    background-color: aquamarine;
+    color: black;
+  }
+
+  .float-text-good{
+    /*both float-texts are the same, but the color differs based on the received outcome*/
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    animation: float-right 1s ease-out forwards;
+  }
+  .float-text-bad{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    animation: float-right 1s ease-out forwards;
+  }
+
+  @keyframes float-right {
+    from{
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+    
+  .run-message{
+    text-align:center;
+    margin-top:20px;
+    font-size:20px;
+    color:RGB(136, 8, 8);
+    opacity:0;
+    transition: opacity .5s ease;
+  }
+  .run-message.visible{
+    opacity:1;
+  }
+
+  .weight-message{
+    text-align:center;
+    margin-top:20px;
+    font-size:20px;
+    color:RGB(136, 8, 8);
+    opacity:0;
+    transition: opacity .5s ease;
+  }
+  .weight-message.visible{
+    opacity:1;
+  }
+
+  .pet-image-container{
+    float: left;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap:20px;
+  }
+  .pet-comment{
+    position: relative;
+    opacity: 0;
+    /*text AND text bubble fade in over .5s*/
+    transition: opacity .5s ease;
+    max-width:200px;
+  }
+  .speech-bubble{
+    /*though a seemingly round image, create as a block for simpler code elsewhere*/
+    width: 180px;
+    display: block;
+  }
+  .pet-comment-text{
+    /*position the pet comment based on where its size lands in speech bubble*/
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:80%;
+    text-align: center;
+    font-size:15px;
+    color:black;
+  }
+
+  .pet-comment.visible{
+    opacity:1;
+  }
